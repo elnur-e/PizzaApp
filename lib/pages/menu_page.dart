@@ -20,7 +20,7 @@ class _MenuPageState extends State<MenuPage> {
   List foodMenu = [
     // sucuklu pizza
     Food(
-        name: "Suculu pizza",
+        name: "Sucuklu Pizza",
         price: "150.00",
         imagePath: "lib/images/pizza-2.png",
         rating: "4.9",
@@ -28,7 +28,7 @@ class _MenuPageState extends State<MenuPage> {
 
     // mantarli pizza
     Food(
-        name: "Mantali pizza",
+        name: "Mantali Pizza",
         price: "150.00",
         imagePath: "lib/images/pizza-5.png",
         rating: "4.9",
@@ -79,7 +79,7 @@ class _MenuPageState extends State<MenuPage> {
                   children: [
                     // promo massage
                     Text(
-                      'Get 32% promo', //indirim mesaj
+                      '50% indirim kazan.', //indirim mesaj
                       style: GoogleFonts.dmSerifDisplay(
                         fontSize: 20,
                         color: Colors.white,
@@ -89,7 +89,7 @@ class _MenuPageState extends State<MenuPage> {
                     const SizedBox(height: 20,),
                     // redeem button
                     MyButton(
-                      text: "Redeem",
+                      text: "Hemen Dene",
                       onTap:(){},
                     ),
                   ],
@@ -132,11 +132,11 @@ class _MenuPageState extends State<MenuPage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0), //all(8.0)
             child: Text(
-              "Food Menu", //pizza menu:)
+              "Pizza Menüleri", //pizza menu:)
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.grey[800],
-                fontSize: 18,
+                fontSize: 20,
               ),
             ),
           ),
@@ -187,7 +187,7 @@ class _MenuPageState extends State<MenuPage> {
                   children: [
                     //name
                     Text(
-                      "kilasik pizza",
+                      "Karışık Pizza",
                       style: GoogleFonts.dmSerifDisplay(fontSize: 18),
                     ),
 
@@ -195,7 +195,7 @@ class _MenuPageState extends State<MenuPage> {
 
                     //price
                     Text(
-                      '\$50.00',
+                      '₺130.00',
                       style: TextStyle(color: Colors.grey[700]),
                     ),
                   ],
