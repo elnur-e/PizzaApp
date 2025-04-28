@@ -61,7 +61,7 @@ class IntroPage extends StatelessWidget {
               text: "Get Stated",
               onTap: (){
                   //go to the menu page
-                Navigator.pushNamed(context, routeName)
+                Navigator.pushNamed(context, '/menupage');
               },
             )
 
