@@ -14,6 +14,7 @@ class IntroPage extends StatelessWidget {
         padding: const EdgeInsets.all(25.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start, //tum cocuklar sola dogru
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly, //bos yerleri doldurma
           children: [
             const SizedBox(height: 25),
             //shop name
@@ -56,7 +57,13 @@ class IntroPage extends StatelessWidget {
             const SizedBox(height: 25),
 
             //get start button
-            MyButton(text: "Get Stated")
+            MyButton(
+              text: "Get Stated",
+              onTap: (){
+                  //go to the menu page
+                Navigator.pushNamed(context, '/menupage');
+              },
+            )
 
           ],
         ),
