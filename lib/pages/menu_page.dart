@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:test_flutter/components/button.dart';
 import 'package:test_flutter/models/food.dart';
+import 'package:test_flutter/pages/food_details_page.dart';
 import 'package:test_flutter/theme/colors.dart';
 
 import '../components/food_tile.dart';
@@ -33,6 +34,14 @@ class _MenuPageState extends State<MenuPage> {
         rating: "4.9",
     ),
   ];
+
+  //navigate to food item detals(ayrinti sayfasina gitmek
+  void navigateToFoodDetals(int index) {
+    Navigator.push(context, MaterialPageRoute(
+      builder: (context) => FoodDetailsPage(
+        food: foodMenu[index],
+      ),),);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,6 +75,7 @@ class _MenuPageState extends State<MenuPage> {
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     // promo massage
                     Text(
@@ -94,7 +104,7 @@ class _MenuPageState extends State<MenuPage> {
           ),
           const SizedBox(height: 25), //bosluk?
 
-          // seach bar
+          // search bar
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: TextField(
@@ -111,6 +121,7 @@ class _MenuPageState extends State<MenuPage> {
                     borderSide:BorderSide(color: Colors.white),
                     borderRadius: BorderRadius.circular(20),
                   ),
+                  hintText: "Buradan Ara...",
               ),
             ),
           ),
@@ -140,6 +151,7 @@ class _MenuPageState extends State<MenuPage> {
                 itemCount: foodMenu.length,
                 itemBuilder: (context, index) => FoodTile(
                   food: foodMenu[index],
+                  onTap: () => navigateToFoodDetals(index),
                 ),
               ),
             //),
@@ -156,38 +168,50 @@ class _MenuPageState extends State<MenuPage> {
             ),
             margin: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
             padding: const EdgeInsets.all(20),
-            child: Row(children: [
-              //image
-              Image.asset(
-                'lib/images/pizza-3.png',
-                height: 60,
-              ),
-
-              const SizedBox(height: 20), //kutu
-
-              //name and price
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+              Row(
                 children: [
-                  //name
-                  Text(
-                    "kilasik pizza",
-                    style: GoogleFonts.dmSerifDisplay(fontSize: 18),
-                  ),
+                  //image
+                Image.asset(
+                  'lib/images/pizza-3.png',
+                  height: 60,
+                ),
 
-                  const SizedBox(height: 10), //kutu
+                const SizedBox(height: 20), //kutu
 
-                  //price
-                  Text(
-                    '\$50.00',
-                    style: TextStyle(color: Colors.grey[700]),
-                  ),
-                ],
-              ),
+                //name and price
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    //name
+                    Text(
+                      "kilasik pizza",
+                      style: GoogleFonts.dmSerifDisplay(fontSize: 18),
+                    ),
+
+                    const SizedBox(height: 10), //kutu
+
+                    //price
+                    Text(
+                      '\$50.00',
+                      style: TextStyle(color: Colors.grey[700]),
+                    ),
+                  ],
+                ),
+
+              ],),
+
               //heart
-              Icon(Icons.favorite_outline,color: Colors.grey, size: 28,),
-            ],),
-          )
+            const  Icon(
+                Icons.favorite_outline,
+                color: Colors.grey,
+                size: 28,
+              ),
+            ],
+            ),
+          ),
 
         ],
       ),
