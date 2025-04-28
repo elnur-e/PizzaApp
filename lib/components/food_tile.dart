@@ -16,7 +16,7 @@ class FoodTile extends StatelessWidget {
         color: Colors.grey[100],
         borderRadius: BorderRadius.circular(20),
       ),
-      margin: EdgeInsets.only(left: 25.0),
+      margin: const EdgeInsets.only(left: 25.0),
       padding: const EdgeInsets.all(25),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,6 +27,7 @@ class FoodTile extends StatelessWidget {
             height: 140,
           ),
 
+        //  const SizedBox(width: 20),
           // text
           Text(
             food.name,
@@ -37,17 +38,30 @@ class FoodTile extends StatelessWidget {
           SizedBox(
             width: 160,
             child: Row(
+
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 //price
                 Text(
                   '\$' + food.price,
                   style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey[800],
+                  ),
+                ),
+                  //rating
+
+
+             /*   Icon(
+                  Icons.star,
+                  color.yellow[800]
+                ),
+                  style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.grey[700],
                   ),
                 ),
-
+*/
                 //rating
                 Row(
                   children: [

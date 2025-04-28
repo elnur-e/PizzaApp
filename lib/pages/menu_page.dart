@@ -94,7 +94,7 @@ class _MenuPageState extends State<MenuPage> {
           ),
           const SizedBox(height: 25), //bosluk?
 
-          // seach bar
+          // search bar
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: TextField(
@@ -111,6 +111,7 @@ class _MenuPageState extends State<MenuPage> {
                     borderSide:BorderSide(color: Colors.white),
                     borderRadius: BorderRadius.circular(20),
                   ),
+                  hintText: "Buradan Ara...",
               ),
             ),
           ),
@@ -156,38 +157,50 @@ class _MenuPageState extends State<MenuPage> {
             ),
             margin: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
             padding: const EdgeInsets.all(20),
-            child: Row(children: [
-              //image
-              Image.asset(
-                'lib/images/pizza-3.png',
-                height: 60,
-              ),
-
-              const SizedBox(height: 20), //kutu
-
-              //name and price
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+              Row(
                 children: [
-                  //name
-                  Text(
-                    "kilasik pizza",
-                    style: GoogleFonts.dmSerifDisplay(fontSize: 18),
-                  ),
+                  //image
+                Image.asset(
+                  'lib/images/pizza-3.png',
+                  height: 60,
+                ),
 
-                  const SizedBox(height: 10), //kutu
+                const SizedBox(height: 20), //kutu
 
-                  //price
-                  Text(
-                    '\$50.00',
-                    style: TextStyle(color: Colors.grey[700]),
-                  ),
-                ],
-              ),
+                //name and price
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    //name
+                    Text(
+                      "kilasik pizza",
+                      style: GoogleFonts.dmSerifDisplay(fontSize: 18),
+                    ),
+
+                    const SizedBox(height: 10), //kutu
+
+                    //price
+                    Text(
+                      '\$50.00',
+                      style: TextStyle(color: Colors.grey[700]),
+                    ),
+                  ],
+                ),
+
+              ],),
+
               //heart
-              Icon(Icons.favorite_outline,color: Colors.grey, size: 28,),
-            ],),
-          )
+            const  Icon(
+                Icons.favorite_outline,
+                color: Colors.grey,
+                size: 28,
+              ),
+            ],
+            ),
+          ),
 
         ],
       ),
