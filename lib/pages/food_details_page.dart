@@ -23,7 +23,9 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
   // decrement quantity
   void decrementQuantity(){
     setState(() {
-      quantityCont--;
+      if(quantityCont > 0){
+        quantityCont--;
+      }
     });
   }
 
