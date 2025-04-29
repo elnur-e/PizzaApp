@@ -1,9 +1,19 @@
+//import 'dart:js';
 import 'package:flutter/material.dart';
+import 'package:test_flutter/models/shop.dart';
 import 'package:test_flutter/pages/intro_page.dart';
 import 'package:test_flutter/pages/menu_page.dart';
+import 'package:provider/provider.dart';
 // ben "Pixel 3a API 34 extention level 7 arm64 -v8a" da yapiyom
 void main() {
-  runApp(const MyApp());
+  runApp(
+      //const MyApp(),
+    ChangeNotifierProvider(
+      create: (context) => Shop(),
+      child: const MyApp(),
+    ),
+
+  );
 }
 
 class MyApp extends StatelessWidget {
