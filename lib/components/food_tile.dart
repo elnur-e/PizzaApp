@@ -13,6 +13,7 @@ class FoodTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -57,6 +58,50 @@ class FoodTile extends StatelessWidget {
 
 
                   /*   Icon(
+=======
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.grey[100],
+        borderRadius: BorderRadius.circular(20),
+      ),
+      margin: const EdgeInsets.only(left: 25.0),
+      padding: const EdgeInsets.all(25),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // image
+          Image.asset(
+            food.imagePath,
+            height: 140,
+          ),
+
+        //  const SizedBox(width: 20),
+          // text
+          Text(
+            food.name,
+            style: GoogleFonts.dmSerifDisplay(fontSize: 20),
+          ),
+
+          // price + rating
+          SizedBox(
+            width: 160,
+            child: Row(
+
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                //price
+                Text(
+                  '₺' + food.price,
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey[800],
+                  ),
+                ),
+                  //rating
+
+
+             /*   Icon(
+>>>>>>> 6c9a56dc249fa1fa75cb0924bf26555edaf77d6e
                   Icons.star,
                   color.yellow[800]
                 ),
@@ -66,6 +111,7 @@ class FoodTile extends StatelessWidget {
                   ),
                 ),
 */
+<<<<<<< HEAD
                   //rating
                   Row(
                     children: [
@@ -84,6 +130,25 @@ class FoodTile extends StatelessWidget {
             )
           ],
         ),
+=======
+                //rating
+                Row(
+                  children: [
+                    Icon(
+                      Icons.star,
+                      color: Colors.yellow[800],
+                    ),
+                    Text(
+                      food.rating,
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          )
+        ],
+>>>>>>> 6c9a56dc249fa1fa75cb0924bf26555edaf77d6e
       ),
     );
   }
